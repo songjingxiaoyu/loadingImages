@@ -1,0 +1,25 @@
+.wrap{
+    width: 100vw;
+    height: 100vh;
+}
+.left{
+    float: left;
+    width: 50%;
+    height: 100vh;
+}
+.right{
+    float: left;
+    width: 50%;
+    height: 100vh;
+}
+.liItem{
+    width: 40vw;
+    height: 50vh;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+
+}
+.listItemImg{
+    width: 100%;
+    height: 100%;
+}
