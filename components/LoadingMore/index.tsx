@@ -37,8 +37,9 @@ const LodingMore = ({ loadText = "laoding...",bottomText="end...", isStopObserve
     //回调函数
     const callback = (entries: any, observer: any) => {
         entries.map((entry: any, index: any) => {
+            console.log(entry)
             if (entry.isIntersecting) {
-                // console.log(entry.isIntersecting)//目标元素与视口是否相交/目标元素当前是否可见
+                console.log(entry.isIntersecting)//目标元素与视口是否相交/目标元素当前是否可见
                 loadNext()
             } else {
 

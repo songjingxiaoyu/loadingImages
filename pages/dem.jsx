@@ -36,7 +36,7 @@ const Dem=()=> {
 
     function goXiaoMing() {
         Router.push({
-            pathname:'/demo',
+            pathname:'/vue3-demo',
             query:{name:'小明'}
         })
     }
@@ -44,8 +44,8 @@ const Dem=()=> {
         <>
             <div>Dem</div>
             <div>
-                <Link href='/demo?name=小明&age=18'><a>小明</a></Link><br/>
-                <Link href={{pathname:'/demo',query:{name:'小红'}}}><a>小红</a></Link>
+                <Link href='/vue3-demo?name=小明&age=18'><a>小明</a></Link><br/>
+                <Link href={{pathname:'/vue3-demo',query:{name:'小红'}}}><a>小红</a></Link>
             </div>
             <div><button onClick={goXiaoMing}>选小明</button></div>
             <div><Link href='#demo'><a>hash模式</a></Link></div>
