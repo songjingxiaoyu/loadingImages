@@ -1,5 +1,4 @@
 
-
 import React from 'react'
 import { useEffect } from 'react'
 
@@ -22,7 +21,7 @@ const LodingMore = ({ loadText = "laoding...",bottomText="end...", isStopObserve
         let ele: any = document.querySelector('#bottom')//目标元素
         if(isStopObserver){
             io.unobserve(ele);//停止观察
-            return//如果停止加载则直接返回，不再执行以下代码
+            // return//如果停止加载则直接返回，不再执行以下代码
         }
         if(io){
             io.disconnect();//如果有，就关闭观察器
@@ -37,12 +36,12 @@ const LodingMore = ({ loadText = "laoding...",bottomText="end...", isStopObserve
     //回调函数
     const callback = (entries: any, observer: any) => {
         entries.map((entry: any, index: any) => {
-            console.log(entry)
-            if (entry.isIntersecting) {
-                console.log(entry.isIntersecting)//目标元素与视口是否相交/目标元素当前是否可见
+            // console.log(entry)
+            if (entry.isIntersecting && entry.target.innerText !== "") {
+                // console.log(entry.isIntersecting)//目标元素与视口是否相交/目标元素当前是否可见
                 loadNext()
             } else {
-
+                return false
             }
         })
     }
@@ -54,8 +53,8 @@ const LodingMore = ({ loadText = "laoding...",bottomText="end...", isStopObserve
     return (
         <>
             {children}
-            <div id="bottom">{!isStopObserver ? loadText : ""}</div>
-            <div>{isStopObserver?bottomText:""}</div>
+            <div style={{textAlign:'center'}} id="bottom">{!isStopObserver ? loadText : ""}</div>
+            <div style={{textAlign:'center'}}>{isStopObserver?bottomText:""}</div>
         </>
     )
 }
